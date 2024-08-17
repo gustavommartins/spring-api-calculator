@@ -31,4 +31,11 @@ public class CalculatorController {
         return ResponseEntity.ok().body(String.valueOf(resultado));
     }
 
+    @GetMapping("/divisao/{numeroUm}/{numeroDois}")
+    public ResponseEntity<String> divisao( @PathVariable(value = "numeroUm") double numeroUm,
+                                                 @PathVariable(value = "numeroDois") double numeroDois){
+        double resultado = numeroUm / numeroDois;
+        return ResponseEntity.ok().body(String.valueOf(resultado));
+    }
+
 }
