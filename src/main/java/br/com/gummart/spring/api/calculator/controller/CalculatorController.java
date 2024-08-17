@@ -17,4 +17,11 @@ public class CalculatorController {
         return ResponseEntity.ok().body(String.valueOf(resultado));
     }
 
+    @GetMapping("/subtracao/{numeroUm}/{numeroDois}")
+    public ResponseEntity<String> subtracao( @PathVariable(value = "numeroUm") double numeroUm,
+                                        @PathVariable(value = "numeroDois") double numeroDois){
+        double resultado = numeroUm - numeroDois;
+        return ResponseEntity.ok().body(String.valueOf(resultado));
+    }
+
 }
