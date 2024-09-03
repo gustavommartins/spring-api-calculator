@@ -1,14 +1,10 @@
-package br.com.gummart.spring.api.calculator.service;
+package br.com.gummart.spring.api.calculator.implementations;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import br.com.gummart.spring.api.calculator.interfaces.MathOperations;
+import org.springframework.stereotype.Component;
 
-@Service
-public class MathService {
-
-    @Autowired
-    public MathService() {
-    }
+@Component
+public class MathOperationsImpl implements MathOperations {
 
     public final String soma(double numeroUm, double numeroDois){
         return String.valueOf(numeroUm + numeroDois);
@@ -30,7 +26,8 @@ public class MathService {
         return String.valueOf((numeroUm + numeroDois) / 2);
     }
 
-    public final String raizQuadrada(double numero){
-        return String.valueOf(Math.sqrt(numero));
+    public final String raizQuadrada(double numero) {
+        return String.valueOf(java.lang.Math.sqrt(numero));
     }
+
 }
